@@ -1,4 +1,4 @@
-module github.com/yidun/yidun-golang-sdk
+module github.com/jingyijun/yidun-golang-sdk
 
 go 1.20
 
