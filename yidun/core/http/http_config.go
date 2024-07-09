@@ -1,5 +1,10 @@
 package http
 
+import (
+	gohttp "net/http"
+	"net/url"
+)
+
 var (
 	DEFAULT_REGION_CODE string   = "cn-hangzhou"
 	DEFAULT_PROTOCOL    Protocol = ProtocolEnumHTTPS
@@ -29,6 +34,7 @@ type HttpClientConfig struct {
 	ResponseTimeoutMs          int64
 	MaxConnectionCount         int
 	MaxConnectionCountPerRoute int
+	Proxy                      func(*gohttp.Request) (*url.URL, error)
 }
 
 func DefaultHttpClientConfig() *HttpClientConfig {

@@ -16,6 +16,7 @@ func CreateByConfig(config *HttpClientConfig) *CustomClient {
 		TLSHandshakeTimeout: time.Duration(config.ConnectionTimeoutMs) * time.Millisecond,
 		MaxIdleConns:        config.MaxConnectionCount,
 		MaxIdleConnsPerHost: config.MaxConnectionCountPerRoute,
+		Proxy:               config.Proxy,
 	}
 
 	httpClient := &http.Client{
