@@ -22,7 +22,7 @@ func NewImageClientWithAccessKey(accessKeyId string, accessKeySecret string) *Im
 	return NewImageClient(client.NewClientProfile(credential))
 }
 
-func NewTextClientWithAccessKeyWithProxy(accessKeyId string, accessKeySecret string, proxy func(*gohttp.Request) (*url.URL, error)) *ImageClient {
+func NewImageClientWithAccessKeyWithProxy(accessKeyId string, accessKeySecret string, proxy func(*gohttp.Request) (*url.URL, error)) *ImageClient {
 	credential := auth.NewCredentials(accessKeyId, accessKeySecret)
 	profile := client.NewClientProfile(credential)
 	profile.HttpClientConfig.Proxy = proxy
